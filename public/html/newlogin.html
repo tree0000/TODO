@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login</title>
+  <link rel="stylesheet" href="../css/newlogin.css">
+  <script defer src="../js/newlogin.js"></script>
+
+
+
+</head>
+<body>
+  <div class="container">
+    <h1>로그인</h1>
+    <form action="../html/main.html" method="GET" onsubmit="return redirectWithUsername();">
+      <div class="container">
+        <button id="kakao-login-btn" onclick="loginWithKakao()">
+            <img src="../img/로그인버튼.png" width="222" alt="카카오 로그인 버튼" />
+        </button>
+        <p id="token-result"></p>
+    </div>
+    </form>
+  </div>
+
+</body>
+</html>
