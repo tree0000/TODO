@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>설정</title>
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js"
+  integrity="sha384-TiCUE00h649CAMonG018J2ujOgDKW/kVWlChEuu4jK2vxfAAD0eZxzCKakxg55G4" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/setting.css">
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script defer src="../js/login.js"></script>
+    <script defer src="../js/setting.js"></script>
+</head>
+<body>
+    <div class="settings-container">
+        <header>
+            <div>
+                <p>닉네임: <span id="nickname"></span></p>
+            </div>
+        </header>
+        <div class="menu-item" onClick="location.href='./newlogin.html'">
+            <span>로그인</span>
+        </div>
+        <div class="menu-item" onClick="location.href='./main.html'">
+            <span>Home</span>
+        </div>
+        <div class="menu-item" onClick="location.href='./checkList.html'">
+            <span>checkList</span>
+        </div>
+        <div class="menu-item" onClick="location.href='./ announcement.html'">
+            <span>공지사항</span>
+            <div class="notification-badge">N</div>
+        </div>
+        <div class="menu-item">
+            <span onclick="logoutFromKakao()">로그아웃</span>
+        </div>
+        <div class="menu-item active" onclick="openJoinWindow()">
+            <span>가입하기</span>
+        </div>
+        <div class="footer">
+            <span>버전</span>
+            <span>5.8.8</span>
+        </div>
+    </div>
+    <div class="bottom-nav">
+        <div class="nav-item">
+            <img src="../img/아이콘 집.png" alt="Home" onClick="location.href='./main.html'">
+            <span></span>
+        </div>
+        <div class="bottom-nav">
+            <div class="nav-item">
+                <img id="homeIcon" src="../img/아이콘 집.png" alt="Home" onClick="location.href='./main.html'">
+                <span></span>
+            </div>
+            <div class="nav-item">
+                <img id="exploreIcon" src="../img/아이콘시계.png" alt="Explore" onClick="location.href='./checkList.html'">
+                <span></span>
+            </div>
+            <!-- <div class="nav-item">
+                <img id="notificationsIcon" src="../img/아이콘 쉐어.png" alt="Notifications" onClick="location.href='./share.html'">
+                <span></span>
+            </div> -->
+            <div class="nav-item">
+                <img id="profileIcon" src="../img/아이콘 설정.png" alt="Profile" onClick="location.href='./setting.html'">
+                <span></span>
+            </div>
+        </div>
+    <script>
+        
+        // 카카오 초기화
+        if (!Kakao.isInitialized()) {
+            Kakao.init('8ff4d517e937032a85d65c38f3c6e3ad');  
+        }
+
+        // 로그아웃 함수
+        function logoutFromKakao() {
+            if (Kakao.Auth.getAccessToken()) {
+                Kakao.Auth.logout(function() {
+                    alert('로그아웃 되었습니다.');
+                    
+                });
+            } else {
+                alert('로그인된 상태가 아닙니다.');
+            }
+        }
+
+        </script>
+</body>
+</html>

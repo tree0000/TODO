@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login</title>
+  <link rel="stylesheet" href="../css/newlogin.css">
+  <script defer src="../js/newlogin.js"></script>
+  
+
+
+
+</head>
+<body>
+  <div class="container">
+    <h1>로그인</h1>
+    <form action="../html/main.html" method="GET" onsubmit="return redirectWithUsername();">
+      <div class="container">
+        <button id="kakao-login-btn" onclick="kakaoLogin()">
+            <img src="../img/로그인버튼.png" width="222" alt="카카오 로그인 버튼" />
+        </button>
+        <p id="token-result"></p>
+    </div>
+    </form>
+    
+  </div>
+  <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+  <script>
+  Kakao.init('8ff4d517e937032a85d65c38f3c6e3ad'); //발급받은 키 중 javascript키를 사용해준다.
+  console.log(Kakao.isInitialized()); // sdk초기화여부판단
+  //카카오로그인
+  function kakaoLogin() {
+      Kakao.Auth.login({
+        success: function (response) {
+          Kakao.API.request({
+            url: '/v2/user/me',
+            success: function (response) {
+              console.log(response)
+            },
+            fail: function (error) {
+              console.log(error)
+            },
+          })
+        },
+        fail: function (error) {
+          console.log(error)
+        },
+      })
+    }
+  //카카오로그아웃  
+  function kakaoLogout() {
+      if (Kakao.Auth.getAccessToken()) {
+        Kakao.API.request({
+          url: '/v1/user/unlink',
+          success: function (response) {
+            console.log(response)
+          },
+          fail: function (error) {
+            console.log(error)
+          },
+        })
+        Kakao.Auth.setAccessToken(undefined)
+      }
+    }  
+  </script>
+</body>
+</html>

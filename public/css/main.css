@@ -1,0 +1,1043 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.background-image {
+    width: 600%;
+    height: 700px; 
+    object-fit: cover;
+    transition: opacity 0.5s ease-in-out; 
+}
+
+.hidden {
+    opacity: 0;
+}
+
+body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: inherit;
+    border-bottom: 1px solid #000000;
+    
+}
+
+.buttonAdd {
+    display: flex;
+    align-items: center;
+    background-color: #090909;
+    border-radius: 25px;
+    padding: 2px 10px;
+    box-shadow: 0px 6px rgba(0, 0, 0, 0.1);
+    max-width: 850px;
+    margin-bottom: 10px; 
+}
+
+.add-input {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 1rem;
+}
+
+.add-button {
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 70%;
+    padding: 9px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.plus-icon {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000000;
+}
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 1650px;
+    height: 90vh;
+    border: none;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(103, 101, 101, 0.1);
+    position: relative;
+    height: 750px
+}
+
+/* 기본 스타일 */
+.form-section {
+    flex: 2.5;
+    padding: 10px;
+    position: sticky; /* 고정 위치 설정 */
+    top: 60px; /* 검색 바 아래에 고정 */
+    z-index: 9; /* 검색 바보다 아래에 위치하도록 z-index 설정 */
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    position: static; /* 고정 위치 설정 */
+    top: 0; /* 상단에서 고정 */
+    background-color: none; /* 배경색 지정 */
+    z-index: 10; /* 다른 요소 위에 위치하도록 z-index 설정 */
+    padding: 15px; /* 상단 고정 시 더 잘 보이도록 패딩 추가 */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none; 
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 2px 29px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* 드롭다운 활성화 시 표시 */
+.show {
+    display: block;
+}
+
+/* 햄버거 아이콘 */
+.menu-icon {
+    position: absolute;
+    top: 20px; 
+    left: 20px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu-icon .bar {
+    width: 30px; 
+    height: 4px;
+    background-color: rgb(255, 255, 255); 
+    margin: 5px 0; 
+    border-radius: 2px;
+}
+
+/* 라이트모드 버튼 설정 */
+.btnimg {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    top: 15px; 
+    left: 50px; 
+    z-index: 3; 
+}
+
+.image-section {
+    flex: 5;
+    position: relative;
+}
+
+/* 달력 */
+.calendar-container .dates {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between; 
+} 
+
+.calendar-container .date {
+    width: 13.28%; 
+    text-align: center;
+    padding: 2px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    cursor: pointer;
+}
+
+.calendar-container .date.today {
+    background-color: #f1c40f; 
+    color: black;
+}
+
+.calendar-container .date.not-current-month {
+    visibility: hidden; 
+}
+/* 달력 끝 */
+
+/* 달력 밑 리스트  */
+.task-list-container {
+    position: absolute; 
+    top: 80%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background-color: rgba(0, 0, 0, 0.8); 
+    color: rgb(0, 0, 0); 
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
+    width: 300px; 
+    z-index: 3; 
+    max-height: 200px; 
+    overflow-y: auto; 
+}
+
+
+.task-list-container h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #f1c40f; 
+}
+
+.task-list-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.task-list-container ul li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.task-list-container ul li:last-child {
+    border-bottom: none;
+}
+
+/* 달력 밑 리스트 끝 */
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.form-section {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px; 
+}
+
+.search-bar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 5px;
+    border: 1px solid #000000;
+}
+
+.search-bar input[type="text"] {
+    width: 40%;
+    padding: 10px;
+    border: 2px solid #fffcfc;
+    border-radius: 20px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.search-bar button {
+    padding: 4px 14px;
+    margin-left: 10px;
+    border: none;
+    background-color: #090908;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.form {
+    background-color: #100f0f;
+    padding: 1px;
+    border-radius: 10px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.input-group input[type="text"],
+.input-group input[type="date"],
+.input-group textarea {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid gainsboro;
+    border-radius: 30px;
+    outline: none;
+    font-size: 1rem;
+    color: #6a6a6a;
+}
+
+.input-group textarea {
+    height: 100px;
+    resize: none;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.stat {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    width: 45%;
+}
+
+.stat p:first-child {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.stat p.number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+.form-section {
+    flex: 2;
+    background-color: #000000;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: visible;
+    height: 100%;
+    overflow-y: auto; 
+}
+.container {
+    display: flex;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px; /* 기존 여백 */
+    position: relative;
+    /* margin-top: -20px; 추가된 여백 조정 */
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 67px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 10px;
+    border: 1px solid #000000; /* 테두리 추가 */
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 1px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #000000;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+.show {
+    display: block;
+}
+.select-category {
+    background-color: #fdfdfd; 
+    border: none;
+    padding: 8px 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    color: #000000; 
+}
+
+.search-box {
+    margin-left: 10px;
+    padding: 10px;
+    border: 1px solid #0b0b0b;
+    border-radius: 12px;
+    outline: none;
+    width: 200px;
+}
+
+.search-box::placeholder {
+    color: #828f8e; 
+}
+
+/* 추가적인 스타일링 */
+.image-section {
+    flex: 2.3;
+}
+
+.form-section {
+    flex: 2.1;
+    padding: 10px;
+}
+
+.buttonAdd {
+    margin-bottom: 7px;
+}
+
+/* .input-group {
+    margin-bottom: 10px;
+} */
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stat {
+    text-align: center;
+}
+.input-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.input-group {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.input-group:last-child {
+    margin-right: 0;
+}
+
+/* 폼과 버튼을 같은 상자 안에 포함시키기 위한 스타일 */
+.form-container {
+    position: relative; /* 부모 요소에 맞게 위치 */
+    width: 100%; /* 너비를 부모 요소에 맞게 설정 */
+    max-width: 303px; /* 최대 너비 설정 */
+    padding: 1px;
+    border-radius: 10px;
+    overflow-y: auto; /* 내용이 넘칠 경우 스크롤 발생 */
+    max-height: 300px; /* 최대 높이 설정 */
+    display: block;
+}
+
+.form-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.action-buttons-vertical {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px; 
+    /* margin-left: 20px;  */
+}
+
+.action-buttons-vertical button {
+    background-color: #090909; 
+    border: 2px solid #ffffff; 
+    border-radius: 50%; 
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #ffffff; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.action-buttons-vertical button:hover {
+    background-color: #333333; 
+}
+
+/* 달력 */
+/* 달력 컨테이너 */
+.calendar-container {
+    position: absolute; 
+    top: 120px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    background-color: rgba(33, 33, 33, 0.8); 
+    color: white; 
+    padding: 20px; 
+    border-radius: 10px; 
+    width: 280px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
+    z-index: 2; 
+}
+
+/* 달력 헤더 */
+.calendar-container .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* 요일 및 날짜 스타일 */
+.calendar-container .days, 
+.calendar-container .dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7개의 열로 균등하게 배치 */
+    gap: 4px;
+    justify-items: center;
+    align-items: center;
+}
+
+.calendar-container .day, 
+.calendar-container .date {
+    width: 30px;
+    height: 34px; 
+    text-align: center;
+    line-height: 30px; 
+    border-radius: 50%; 
+}
+
+
+.calendar-container .date {
+    cursor: pointer;
+    border-radius: 50%; 
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.1); 
+}
+
+.calendar-container .date.today {
+    background-color: #f1c40f; 
+    color: black;
+}
+
+.calendar-container .date:hover {
+    background-color: rgba(255, 255, 255, 0.2); 
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .calendar-container {
+        width: 90%; 
+        left: 50%; 
+        transform: translateX(-50%);
+    }
+}
+/* 달력 끝 */
+
+/* 기본 스타일 (데스크탑) */
+/* 이미 제공된 스타일들이 여기에 적용됩니다 */
+
+/* 네비 */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 47.8%;
+    height: 83px;
+    background-color: #000000; /* 원하는 배경색으로 변경 */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff; /* 텍스트 색상 */
+    font-size: 12px;
+}
+
+.nav-item img {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 5px;
+}
+
+/* 모바일 반응형 디자인 */
+@media (max-width: 768px) {
+    .bottom-nav {
+        height: 50px;
+    }
+    .nav-item img {
+        width: 20px;
+        height: 20px;
+    }
+    .nav-item span {
+        font-size: 10px;
+    }
+}
+/* 네비 끝*/
+
+
+/* 라이트모드 */
+/* 라이트모드 스타일 */
+body.light-mode {
+    background-color: f0f0f0;
+    color: black;
+}
+
+body.light-mode .form-section {
+    background-color: #f0f0f0;
+    color: #000000;
+}
+
+body.light-mode .bottom-nav {
+    background-color: #f0f0f0;
+    color: #000000;
+}
+
+body.light-mode .calendar-container {
+    background-color: rgba(255, 255, 255, 0.8); 
+    color: black;
+}
+
+body.light-mode .task-list-container {
+    background-color: rgba(255, 255, 255, 0.8); 
+    color: black;
+}
+
+body.light-mode .stat {
+    background-color: #ffffff;
+    color: #000000;
+}
+/*  */
+body.light-mode .form-content {
+    background-color: #ffffff; /* 라이트 모드 배경색 */
+    color: #000; /* 검정색 텍스트 */
+}
+
+body.light-mode .form {
+    background-color: #ffffff; /* 라이트 모드 폼 배경색 */
+}
+
+body.light-mode .input-group input,
+body.light-mode .input-group textarea {
+    background-color: #ffffff; /* 입력 필드 배경색 */
+    color: #000000; /* 검정색 텍스트 */
+    border: 1px solid #ccc; /* 회색 테두리 */
+}
+
+body.light-mode .action-buttons-vertical button {
+    background-color: #ffffff; /* 버튼 배경색 */
+    color: #000000; /* 버튼 텍스트 색상 */
+    border: 1px solid #ccc; /* 회색 테두리 */
+}
+
+/*  */
+
+
+/* 아이콘과 텍스트를 검은색으로 유지 */
+body.light-mode .nav-item img,
+body.light-mode .nav-item span {
+    color: black;
+    filter: none; 
+}
+
+/* 날짜 텍스트 색상 유지 */
+body.light-mode .task-list-container h3,
+body.light-mode .task-list-container ul li,
+body.light-mode .calendar-container .date,
+body.light-mode .stat p {
+    color: black;
+}
+
+/* 다크모드 스타일 */
+body.dark-mode {
+    background-color: black;
+    color: rgb(0, 0, 0);
+}
+
+body.dark-mode .form-section {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+body.dark-mode .bottom-nav {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+body.dark-mode .calendar-container {
+    background-color: rgba(33, 33, 33, 0.8); 
+    color: white;
+}
+/*  */
+body.dark-mode .form-content {
+    background-color: #000000; /* 다크 모드 배경색 */
+    color: #ffffff; /* 흰색 텍스트 */
+}
+
+body.dark-mode .form {
+    background-color: #000000; /* 다크 모드 폼 배경색 */
+}
+
+body.dark-mode .input-group input,
+body.dark-mode .input-group textarea {
+    background-color: #ffffff; /* 입력 필드 배경색 */
+    color: #ffffff; /* 흰색 텍스트 */
+    border: 1px solid #555; /* 진한 회색 테두리 */
+}
+
+body.dark-mode .action-buttons-vertical button {
+    background-color: #4a4a4a; /* 버튼 배경색 */
+    color: #ffffff; /* 버튼 텍스트 색상 */
+    border: 1px solid #555; /* 진한 회색 테두리 */
+}
+/*  */
+
+
+/* 달력 날짜 텍스트 색상 변경 */
+body.dark-mode .calendar-container .date {
+    color: rgb(0, 0, 0);
+}
+
+body.dark-mode .task-list-container {
+    background-color: rgb(0, 0, 0); 
+    color: white;
+}
+
+/* 할일 목록, 완료 및 삭제 버튼 텍스트 색상 변경 */
+body.dark-mode .task-list-container h3,
+body.dark-mode .task-list-container ul li{
+    color: white;
+}
+
+
+/* 기본 스타일 */
+.form-content {
+    padding: 6px;
+    border-radius: 10px;
+}
+
+.form {
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #f9f9f9;
+}
+
+/* 버튼 스타일 */
+.action-buttons-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.action-buttons-vertical button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* 기타 스타일  */
+.buttonAdd {
+    display: flex;
+    align-items: center;
+    background-color: #fffefe;
+    border-radius: 8px;
+    padding: inherit;
+    max-width: 350px;
+    margin-bottom: 10px; 
+}
+
+.add-input {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 1rem;
+}
+
+.add-button {
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 70%;
+    padding: 9px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.plus-icon {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000000;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 1650px;
+    height: 90vh;
+    border: none;
+    overflow: hidden;
+    position: relative;
+    height: 750px;
+}
+
+/* 기본 스타일 */
+.form-section {
+    padding: 1px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px; 
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 47.8%;
+    height: 83px;
+    background-color: #000000; /* 기본은 다크모드 */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff; /* 기본은 다크모드 */
+    font-size: 12px;
+}
+
+.nav-item img {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 5px;
+}
+
+.menu-icon {
+    position: absolute;
+    top: 20px; 
+    left: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.menu-icon .bar {
+    width: 30px; 
+    height: 4px;
+    background-color: rgb(255, 255, 255); 
+    margin: 5px 0; 
+    border-radius: 2px;
+}
+.menu-icon img {
+    width: 25px;  /* 아이콘의 가로 크기를 줄입니다 */
+    height: 25px; /* 아이콘의 세로 크기를 줄입니다 */
+}
+.btn {
+    text-indent: -9999px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.btnimg {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    top: 15px;
+    left: 300px;
+    z-index: 2;
+}
+
+
+/* 반응형 디자인: 태블릿 */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    .image-section, 
+    .form-section {
+        flex: none;
+        width: 100%;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .buttonAdd {
+        width: 100%;
+    }
+
+    .stats {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .stat {
+        width: 100%;
+    }
+
+    .calendar-container {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .dropdown-content {
+        min-width: 100%; 
+    }
+}
+
+/* 반응형 디자인: 모바일 */
+@media (max-width: 680px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .image-section, 
+    .form-section {
+        flex: none;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .buttonAdd {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .input-group input[type="text"],
+    .input-group input[type="date"],
+    .input-group textarea {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .stat {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .stats {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .calendar-container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .dropdown-content {
+        min-width: 100%; /* 드롭다운 너비를 전체 화면으로 */
+    }
+
+    .action-buttons-vertical button {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+}
+
+/* 매우 작은 모바일 화면 */
+@media (max-width: 1200px) {
+    .container {
+        padding: 10px;
+    }
+
+    .buttonAdd {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .add-input {
+        margin-bottom: 1px;
+    }
+
+    .form-section {
+        padding: 3px;
+    }
+
+    .calendar-container {
+        padding: 3px;
+    }
+
+    .input-group input[type="text"],
+    .input-group input[type="date"],
+    .input-group textarea {
+        font-size: 0.8rem;
+        padding: 6px;
+    }
+
+    .dropdown-content {
+        min-width: 200%;
+    }
+
+    .action-buttons-vertical {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .action-buttons-vertical button {
+        width: 10px;
+        height: 15px;
+        font-size: 0.8rem;
+    }
+}
