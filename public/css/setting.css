@@ -44,7 +44,11 @@ h1 {
 }
 
 .notification-badge {
+<<<<<<< HEAD
     background-color: #f00; /* Red background */
+=======
+    background-color: #f00; 
+>>>>>>> e4ca0168bea601adcd1885005e0789114c30ec59
     color: #fff;
     font-size: 12px;
     padding: 2px 6px;
@@ -84,7 +88,11 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+<<<<<<< HEAD
     color: #ffffff; /* 텍스트 색상 */
+=======
+    color: #ffffff; 
+>>>>>>> e4ca0168bea601adcd1885005e0789114c30ec59
     font-size: 12px;
     cursor: pointer;
 }

@@ -33,7 +33,11 @@ body {
 }
 
 .section {
+<<<<<<< HEAD
     width: 300%;
+=======
+    width: 200%;
+>>>>>>> e4ca0168bea601adcd1885005e0789114c30ec59
     max-width: 800px;
     background-color: #1c1c1c;
     margin-bottom: 20px;

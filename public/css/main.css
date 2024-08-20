@@ -32,7 +32,11 @@ body, html {
     border-radius: 25px;
     padding: 2px 10px;
     box-shadow: 0px 6px rgba(0, 0, 0, 0.1);
+<<<<<<< HEAD
     max-width: 850px;
+=======
+    max-width: 350px;
+>>>>>>> e4ca0168bea601adcd1885005e0789114c30ec59
     margin-bottom: 10px; 
 }
 
@@ -89,11 +93,19 @@ body, html {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
+<<<<<<< HEAD
     position: static; /* 고정 위치 설정 */
     top: 0; /* 상단에서 고정 */
     background-color: none; /* 배경색 지정 */
     z-index: 10; /* 다른 요소 위에 위치하도록 z-index 설정 */
     padding: 15px; /* 상단 고정 시 더 잘 보이도록 패딩 추가 */
+=======
+    position: sticky; /* 고정 위치 설정 */
+    top: 0; /* 상단에서 고정 */
+    background-color: none; /* 배경색 지정 */
+    z-index: 10; /* 다른 요소 위에 위치하도록 z-index 설정 */
+    padding: 10px; /* 상단 고정 시 더 잘 보이도록 패딩 추가 */
+>>>>>>> e4ca0168bea601adcd1885005e0789114c30ec59
 }
 
 .dropdown {
@@ -113,7 +125,11 @@ body, html {
 
 .dropdown-content a {
     color: black;
+<<<<<<< HEAD
     padding: 2px 29px;
+=======
+    padding: 12px 16px;
+>>>>>>> e4ca0168bea601adcd1885005e0789114c30ec59
     text-decoration: none;
     display: block;
     border-bottom: 1px solid #ddd;
@@ -197,7 +213,11 @@ body, html {
     left: 50%; 
     transform: translate(-50%, -50%); 
     background-color: rgba(0, 0, 0, 0.8); 
+<<<<<<< HEAD
     color: rgb(0, 0, 0); 
+=======
+    color: white; 
+>>>>>>> e4ca0168bea601adcd1885005e0789114c30ec59
     padding: 20px; 
     border-radius: 10px; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
@@ -404,7 +424,11 @@ body, html {
 }
 
 .form-section {
+<<<<<<< HEAD
     flex: 2.1;
+=======
+    flex: 2.5;
+>>>>>>> e4ca0168bea601adcd1885005e0789114c30ec59
     padding: 10px;
 }
 
@@ -441,6 +465,7 @@ body, html {
 
 /* 폼과 버튼을 같은 상자 안에 포함시키기 위한 스타일 */
 .form-container {
+<<<<<<< HEAD
     position: relative; /* 부모 요소에 맞게 위치 */
     width: 100%; /* 너비를 부모 요소에 맞게 설정 */
     max-width: 303px; /* 최대 너비 설정 */
@@ -449,11 +474,28 @@ body, html {
     overflow-y: auto; /* 내용이 넘칠 경우 스크롤 발생 */
     max-height: 300px; /* 최대 높이 설정 */
     display: block;
+=======
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #090909; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; 
+    max-height: 400px; /* 폼 컨테이너의 최대 높이 설정 */
+    overflow-y: auto; /* 스크롤 가능하도록 설정 */
+>>>>>>> e4ca0168bea601adcd1885005e0789114c30ec59
 }
 
 .form-content {
     display: flex;
+<<<<<<< HEAD
     justify-content: flex-start;
+=======
+    width: 100%;
+    justify-content: flex-end;
+>>>>>>> e4ca0168bea601adcd1885005e0789114c30ec59
     align-items: center;
     margin-bottom: 20px;
 }
@@ -604,7 +646,11 @@ body, html {
 /* 라이트모드 */
 /* 라이트모드 스타일 */
 body.light-mode {
+<<<<<<< HEAD
     background-color: f0f0f0;
+=======
+    background-color: white;
+>>>>>>> e4ca0168bea601adcd1885005e0789114c30ec59
     color: black;
 }
 
@@ -632,6 +678,7 @@ body.light-mode .stat {
     background-color: #ffffff;
     color: #000000;
 }
+<<<<<<< HEAD
 /*  */
 body.light-mode .form-content {
     background-color: #ffffff; /* 라이트 모드 배경색 */
@@ -657,12 +704,18 @@ body.light-mode .action-buttons-vertical button {
 
 /*  */
 
+=======
+>>>>>>> e4ca0168bea601adcd1885005e0789114c30ec59
 
 /* 아이콘과 텍스트를 검은색으로 유지 */
 body.light-mode .nav-item img,
 body.light-mode .nav-item span {
     color: black;
+<<<<<<< HEAD
     filter: none; 
+=======
+    filter: none; /* 아이콘의 필터 효과를 제거하여 원래 색상을 유지 */
+>>>>>>> e4ca0168bea601adcd1885005e0789114c30ec59
 }
 
 /* 날짜 텍스트 색상 유지 */
@@ -676,7 +729,11 @@ body.light-mode .stat p {
 /* 다크모드 스타일 */
 body.dark-mode {
     background-color: black;
+<<<<<<< HEAD
     color: rgb(0, 0, 0);
+=======
+    color: white;
+>>>>>>> e4ca0168bea601adcd1885005e0789114c30ec59
 }
 
 body.dark-mode .form-section {
@@ -693,6 +750,7 @@ body.dark-mode .calendar-container {
     background-color: rgba(33, 33, 33, 0.8); 
     color: white;
 }
+<<<<<<< HEAD
 /*  */
 body.dark-mode .form-content {
     background-color: #000000; /* 다크 모드 배경색 */
@@ -725,6 +783,16 @@ body.dark-mode .calendar-container .date {
 
 body.dark-mode .task-list-container {
     background-color: rgb(0, 0, 0); 
+=======
+
+/* 달력 날짜 텍스트 색상 변경 */
+body.dark-mode .calendar-container .date {
+    color: white;
+}
+
+body.dark-mode .task-list-container {
+    background-color: rgba(0, 0, 0, 0.8); 
+>>>>>>> e4ca0168bea601adcd1885005e0789114c30ec59
     color: white;
 }
 
@@ -735,6 +803,7 @@ body.dark-mode .task-list-container ul li{
 }
 
 
+<<<<<<< HEAD
 /* 기본 스타일 */
 .form-content {
     padding: 6px;
@@ -787,6 +856,19 @@ body.dark-mode .task-list-container ul li{
     background-color: #fffefe;
     border-radius: 8px;
     padding: inherit;
+=======
+/* 기타 스타일 */
+
+
+/* 기타 스타일 (변경 없음) */
+.buttonAdd {
+    display: flex;
+    align-items: center;
+    background-color: #090909;
+    border-radius: 25px;
+    padding: 2px 10px;
+    box-shadow: 0px 6px rgba(0, 0, 0, 0.1);
+>>>>>>> e4ca0168bea601adcd1885005e0789114c30ec59
     max-width: 350px;
     margin-bottom: 10px; 
 }
@@ -810,6 +892,10 @@ body.dark-mode .task-list-container ul li{
     align-items: center;
     justify-content: center;
     margin-left: 10px;
+<<<<<<< HEAD
+=======
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+>>>>>>> e4ca0168bea601adcd1885005e0789114c30ec59
 }
 
 .plus-icon {
@@ -825,6 +911,10 @@ body.dark-mode .task-list-container ul li{
     height: 90vh;
     border: none;
     overflow: hidden;
+<<<<<<< HEAD
+=======
+    box-shadow: 0 4px 15px rgba(103, 101, 101, 0.1);
+>>>>>>> e4ca0168bea601adcd1885005e0789114c30ec59
     position: relative;
     height: 750px;
 }
@@ -846,6 +936,10 @@ body.dark-mode .task-list-container ul li{
     display: flex;
     justify-content: space-around;
     align-items: center;
+<<<<<<< HEAD
+=======
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+>>>>>>> e4ca0168bea601adcd1885005e0789114c30ec59
 }
 
 .nav-item {
@@ -878,10 +972,14 @@ body.dark-mode .task-list-container ul li{
     margin: 5px 0; 
     border-radius: 2px;
 }
+<<<<<<< HEAD
 .menu-icon img {
     width: 25px;  /* 아이콘의 가로 크기를 줄입니다 */
     height: 25px; /* 아이콘의 세로 크기를 줄입니다 */
 }
+=======
+
+>>>>>>> e4ca0168bea601adcd1885005e0789114c30ec59
 .btn {
     text-indent: -9999px;
     overflow: hidden;
@@ -897,7 +995,11 @@ body.dark-mode .task-list-container ul li{
     left: 300px;
     z-index: 2;
 }
+<<<<<<< HEAD
 
+=======
+/* 다크모드 끝 */
+>>>>>>> e4ca0168bea601adcd1885005e0789114c30ec59
 
 /* 반응형 디자인: 태블릿 */
 @media (max-width: 1024px) {
