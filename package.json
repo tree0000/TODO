@@ -2,29 +2,19 @@
   "name": "devcoding",
   "version": "1.0.0",
   "scripts": {
-<<<<<<< HEAD
     "dev": "node lending.js"
-=======
-    "dev": "node /Users/tary/Desktop/devcoding/start/public/js/lending.js"
->>>>>>> e4ca0168bea601adcd1885005e0789114c30ec59
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-<<<<<<< HEAD
     "bcrypt": "^5.1.1",
-=======
->>>>>>> e4ca0168bea601adcd1885005e0789114c30ec59
     "calendar": "^0.1.1",
     "cookie-parser": "^1.4.6",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
-<<<<<<< HEAD
     "jsonwebtoken": "^9.0.2",
-=======
->>>>>>> e4ca0168bea601adcd1885005e0789114c30ec59
     "mongodb": "^6.8.0",
     "mongoose": "^8.5.3",
     "nodemailer": "^6.9.14"

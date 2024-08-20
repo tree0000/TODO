@@ -255,7 +255,6 @@ function saveTaskForm(button) {
 // 햄버거 메뉴 클릭 시 달력을 토글하는 함수
 function toggleCalendar() {
   const calendar = document.querySelector(".calendar-container");
-<<<<<<< HEAD
   const taskList = document.getElementById("taskListContainer"); 
 
   if (calendar.style.display === "none" || calendar.style.display === "") {
@@ -264,26 +263,12 @@ function toggleCalendar() {
   } else {
     calendar.style.display = "none";
     taskList.style.display = "none"; 
-=======
-  const taskList = document.getElementById("taskListContainer"); // 할 일 목록 컨테이너 선택
-
-  if (calendar.style.display === "none" || calendar.style.display === "") {
-    calendar.style.display = "block";
-    taskList.style.display = "block"; // 할 일 목록도 함께 보이도록 설정
-  } else {
-    calendar.style.display = "none";
-    taskList.style.display = "none"; // 할 일 목록도 함께 숨김
->>>>>>> e4ca0168bea601adcd1885005e0789114c30ec59
   }
 }
 
 // 카테고리 선택 함수
 function selectCategory(category) {
-<<<<<<< HEAD
   selectedCategory = category; 
-=======
-  selectedCategory = category; // 선택된 카테고리를 저장
->>>>>>> e4ca0168bea601adcd1885005e0789114c30ec59
   document.querySelector(".select-category").textContent = category;
   toggleDropdown();
 }
@@ -326,19 +311,14 @@ function formatDateWithDay(dateString) {
 
 // 검색 함수
 function searchTasks() {
-<<<<<<< HEAD
   const searchQuery = document
     .querySelector(".search-box")
     .value.trim()
     .toLowerCase();
-=======
-  const searchQuery = document.querySelector(".search-box").value.trim();
->>>>>>> e4ca0168bea601adcd1885005e0789114c30ec59
   const taskListContainer = document.getElementById("taskListContainer");
 
   let searchResults = [];
 
-<<<<<<< HEAD
   // 완료된 할 일에서 검색어가 포함된 항목 또는 날짜를 찾음
   for (let date in completedTasks) {
     const formattedDate = formatDateWithDay(date).toLowerCase();
@@ -361,18 +341,6 @@ function searchTasks() {
           tasks: filteredTasks,
         });
       }
-=======
-  // 완료된 할 일에서 검색어가 포함된 항목을 찾음
-  for (let date in completedTasks) {
-    const filteredTasks = completedTasks[date].filter((task) =>
-      task.includes(searchQuery)
-    );
-    if (filteredTasks.length > 0) {
-      searchResults.push({
-        date: formatDateWithDay(date),
-        tasks: filteredTasks,
-      });
->>>>>>> e4ca0168bea601adcd1885005e0789114c30ec59
     }
   }
 
@@ -470,21 +438,13 @@ function toggleDarkMode() {
     // 다크 모드일 때 흰색 이미지로 변경
     document.getElementById("homeIcon").src = "../img/아이콘 집.png";
     document.getElementById("exploreIcon").src = "../img/아이콘시계.png";
-<<<<<<< HEAD
     // document.getElementById("notificationsIcon").src = "../img/아이콘 쉐어.png";
-=======
-    document.getElementById("notificationsIcon").src = "../img/아이콘 쉐어.png";
->>>>>>> e4ca0168bea601adcd1885005e0789114c30ec59
     document.getElementById("profileIcon").src = "../img/아이콘 설정.png";
   } else {
     // 라이트 모드일 때 검정색 이미지로 변경
     document.getElementById("homeIcon").src = "../img/검정 홈.png";
     document.getElementById("exploreIcon").src = "../img/검정시계.png";
-<<<<<<< HEAD
     // document.getElementById("notificationsIcon").src = "../img/검정 링크.png";
-=======
-    document.getElementById("notificationsIcon").src = "../img/검정 링크.png";
->>>>>>> e4ca0168bea601adcd1885005e0789114c30ec59
     document.getElementById("profileIcon").src = "../img/검정설정.png";
   }
 }
