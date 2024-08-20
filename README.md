@@ -41,6 +41,6 @@
 <br><br> <img src="https://github.com/user-attachments/assets/0e8620d3-087a-4d30-8a2a-d60812220d0a" width="200" height="200"/>  <img src="https://github.com/user-attachments/assets/70be6fe0-9010-47ee-8ec7-ccf9a54b7feb" width="200" height="200"/> <img src="https://github.com/user-attachments/assets/f31d323f-ddbb-4237-bafe-0ce34501d2e4" width="200" height="200"/> 
 
 ### 🚀 기술
-|<img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white"/>|<img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white"/>|<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"/>|<img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=flat-square&logo=Visual Studio Code&logoColor=white"/>|<img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=MongoDB&logoColor=white"/>|
-|---|---|---|---|---|
+|<img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white"/>|<img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white"/>|<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"/>|<img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=flat-square&logo=Visual Studio Code&logoColor=white"/>|
+|---|---|---|---|
 
